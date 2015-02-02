@@ -94,7 +94,7 @@ public class MovieExample {
 
         @Override
         public void run() {
-		initialize();	
+		    initialize();	
             boolean hasError=false;
             while (run) {
                 try {
@@ -159,16 +159,16 @@ public class MovieExample {
                         e.printStackTrace();
                     }
                 } 
-                if(hasError) {
-		initialize();	
+                if (hasError) {
+                    initialize();
                 }
             }
         }
         
-	private void initialize() {
-                    in = new BufferedReader(new InputStreamReader(System.in));
-                    out = new BufferedWriter(new OutputStreamWriter(System.out));		
-	}
+        private void initialize() {
+            in = new BufferedReader(new InputStreamReader(System.in));
+            out = new BufferedWriter(new OutputStreamWriter(System.out));
+        }
 	
         private void write(String s) throws IOException {
             write(s, true);
