@@ -180,6 +180,7 @@ public class MovieExample {
         }	
     }
     
+    @SuppressWarnings("unused")
     private static class MovieConsumer extends Thread {
         @Override
         public void run() {
