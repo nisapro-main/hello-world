@@ -184,7 +184,7 @@ public class Movie {
         @Override
         public void run() {
             while(run) {
-		// no-op	
+		System.out.println("MovieConsumer run()");
             }
         }
     }
