@@ -87,6 +87,9 @@ public class MovieExample {
         MovieExample.run = true;
     }
     
+    /**
+     * Movie Producer
+     */
     private static class MovieProducer extends Thread {
         BufferedReader in;
         BufferedWriter out;
@@ -185,6 +188,7 @@ public class MovieExample {
     
     @SuppressWarnings("unused")
     private static class MovieConsumer extends Thread {
+
         @Override
         public void run() {
             while (run) {
