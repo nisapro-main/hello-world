@@ -1,6 +1,16 @@
 /*******************************************************
  * Movie
  *
+ * Copyright (c) 1999-2010 Aegis Software Inc.,
+ * 225 West 34th Street, New York, NY 10122, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of Aegis Software Inc. ("Confidential Information").  You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with Aegis.
+ *
  * Created on Jan 11, 2015
  *
  * @author NiltonS
@@ -184,7 +194,7 @@ public class Movie {
         @Override
         public void run() {
             while(run) {
-		// no-op	
+                
             }
         }
     }
