@@ -22,17 +22,17 @@ public class Movie {
 
     private static final String MOVIE_INPUT_FORMAT = "Enter new movie (format: name:director:year (yyyy) - type 'q' to quit.)";
     
-    private final static List<MovieDTO> movies = new ArrayList<MovieDTO>();
+    private final static List<Movie> movies = new ArrayList<Movie>();
     public volatile static boolean run;
     private static final DateFormat FORMAT = new SimpleDateFormat("yyyy");
     
     
-    private static class MovieDTO {
+    private static class Movie {
         String name;
         String director;
         Date year;
 
-        public MovieDTO(String name, String director, Date year) {
+        public Movie(String name, String director, Date year) {
             this.name = name;
             this.director = director;
             this.year = year;
@@ -62,7 +62,7 @@ public class Movie {
                 return false;
             if (getClass() != obj.getClass())
                 return false;
-            MovieDTO other = (MovieDTO) obj;
+            Movie other = (Movie) obj;
             if (director == null) {
                 if (other.director != null)
                     return false;
@@ -132,7 +132,7 @@ public class Movie {
                             if( (name==null||name.isEmpty()) || (director==null||director.isEmpty()) || year==null ) {
                                 write(String.format("\nYou've entered an invalid movie's release year: %s.", yearIn));
                             } else {
-                                MovieDTO m = new MovieDTO(split[0].trim(), split[1].trim(), year);
+                                Movie m = new Movie(split[0].trim(), split[1].trim(), year);
                                 movies.add(m);
                                 write(String.format("Stored movie: %s", m));
                             }
@@ -142,7 +142,7 @@ public class Movie {
                         write(MOVIE_INPUT_FORMAT);
                     }
                     write("Contents of the movie database:");
-                    for (MovieDTO movie : movies) {
+                    for (Movie movie : movies) {
                         write(movie.toString());
                     }
                 } catch (Throwable e) {
