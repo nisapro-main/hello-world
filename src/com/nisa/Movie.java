@@ -178,10 +178,16 @@ public class Movie {
         }
         
         private void write(String s) throws IOException {
-            out.write(s);
-            out.write("\n");
-            out.flush();
+	    write(s, true);
         }
+	
+        private void write(String s, boolean addNewLine) throws IOException {
+            out.write(s);
+	    if(addNewLine) {
+                out.write("\n");
+	    }
+            out.flush();
+        }	
     }
     
     private static class MovieConsumer extends Thread {
