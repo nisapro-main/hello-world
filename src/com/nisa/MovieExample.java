@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * MovieExample
+ */
 public class MovieExample {
 
     private static final String MOVIE_INPUT_FORMAT = "Enter new movie (format: name:director:year (yyyy) - type 'q' to quit.)";
