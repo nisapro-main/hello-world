@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Movie {
+public class MovieExample {
 
     private static final String MOVIE_INPUT_FORMAT = "Enter new movie (format: name:director:year (yyyy) - type 'q' to quit.)";
     
@@ -83,8 +83,8 @@ public class Movie {
         
     }
     
-    public Movie() {
-        Movie.run = true;
+    public MovieExample() {
+        MovieExample.run = true;
     }
     
     private static class MovieProducer extends Thread {
@@ -191,7 +191,7 @@ public class Movie {
 
     public static void main(String[] args) throws InterruptedException {
         @SuppressWarnings("unused")
-        Movie movie = new Movie();
+        MovieExample movie = new MovieExample();
         MovieProducer producer = new MovieProducer();
         producer.start();
         producer.join();
