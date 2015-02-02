@@ -168,14 +168,14 @@ public class Movie {
         }
         
         private void write(String s) throws IOException {
-	    write(s, true);
+            write(s, true);
         }
 	
         private void write(String s, boolean addNewLine) throws IOException {
             out.write(s);
-	    if(addNewLine) {
+            if (addNewLine) {
                 out.write("\n");
-	    }
+            }
             out.flush();
         }	
     }
@@ -183,8 +183,8 @@ public class Movie {
     private static class MovieConsumer extends Thread {
         @Override
         public void run() {
-            while(run) {
-		System.out.println("MovieConsumer run()");
+            while (run) {
+                System.out.println("MovieConsumer run()");
             }
         }
     }
