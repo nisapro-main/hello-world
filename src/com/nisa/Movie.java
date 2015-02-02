@@ -190,9 +190,10 @@ public class Movie {
     }
 
     public static void main(String[] args) throws InterruptedException {
+        @SuppressWarnings("unused")
         Movie movie = new Movie();
         MovieProducer producer = new MovieProducer();
         producer.start();
-//        producer.join();
+        producer.join();
     }
 }
