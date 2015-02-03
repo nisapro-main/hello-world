@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * MovieExample
+ * A great MovieExample
  */
 public class MovieExample {
 
