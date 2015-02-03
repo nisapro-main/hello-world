@@ -107,37 +107,7 @@ public class MovieExample {
                         }
                         write(String.format("Read line: %s", input)); 
                         String[] split = input.split(":");
-                        if(split!=null && split.length==3) {
-                            Date year=null;
-                            String name=null;
-                            String director=null;
-                            
-                            String yearIn = null;
-                            String nameIn = split[0];
-                            String dirIn = split[1];
-                            
-                            if(!nameIn.isEmpty()) {
-                                name = nameIn.trim();
-                            }
-                            if(!dirIn.isEmpty()) {
-                                director = dirIn.trim();
-                            }
-                            try {
-                                yearIn = split[2];
-                                year = FORMAT.parse(yearIn.trim());
-                            } catch (Exception e) {
-                                // ignored
-                            }
-                            if( (name==null||name.isEmpty()) || (director==null||director.isEmpty()) || year==null ) {
-                                write(String.format("\nYou've entered an invalid movie's release year: %s.", yearIn));
-                            } else {
-                                Movie m = new Movie(split[0].trim(), split[1].trim(), year);
-                                movies.add(m);
-                                write(String.format("Stored movie: %s", m));
-                            }
-                        } else {
-                            write(String.format("\nYou've entered an invalid movie: %s.", input));
-                        }
+                        processInput(split);
                         write(MOVIE_INPUT_FORMAT);
                     }
                     write("Contents of the movie database:");
@@ -162,6 +132,40 @@ public class MovieExample {
                 if (hasError) {
                     initialize();
                 }
+            }
+        }
+
+        private void processInput(String[] split) throws IOException {
+            if(split!=null && split.length==3) {
+                Date year=null;
+                String name=null;
+                String director=null;
+                
+                String yearIn = null;
+                String nameIn = split[0];
+                String dirIn = split[1];
+                
+                if(!nameIn.isEmpty()) {
+                    name = nameIn.trim();
+                }
+                if(!dirIn.isEmpty()) {
+                    director = dirIn.trim();
+                }
+                try {
+                    yearIn = split[2];
+                    year = FORMAT.parse(yearIn.trim());
+                } catch (Exception e) {
+                    // ignored
+                }
+                if( (name==null||name.isEmpty()) || (director==null||director.isEmpty()) || year==null ) {
+                    write(String.format("\nYou've entered an invalid movie's release year: %s.", yearIn));
+                } else {
+                    Movie m = new Movie(split[0].trim(), split[1].trim(), year);
+                    movies.add(m);
+                    write(String.format("Stored movie: %s", m));
+                }
+            } else {
+                write(String.format("\nYou've entered an invalid movie: %s.", input));
             }
         }
         
